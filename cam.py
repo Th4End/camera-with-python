@@ -40,23 +40,3 @@ try:
     cv2.destroyAllWindows()
 except Exception as e:
     print(f'Erreur: {e}')
-# while True:
-#     ret, frame = cap.read()
-#     if not ret:
-#         break
-    
-#     faces = face_cascade.detectMultiScale(
-#         frame
-#     )
-
-#     for(x, y, w, h) in faces:
-#         cv2.rectangle(frame, (x,y), (x + w, y + h), (0,255,255))
-    
-#     cv2.imshow('Video', frame)
-
-#     if cv2.waitKey(1) & 0xFF == ord('a'):
-#         break
-
-
-# cap.release()
-# cv2.destroyAllWindows()
