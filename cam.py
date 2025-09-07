@@ -1,5 +1,6 @@
 import cv2
-import mediapipe as mp 
+import mediapipe as mp
+import time
 
 
 cap = cv2.VideoCapture(0)
@@ -17,11 +18,15 @@ try:
     ) as face_detection :
         while cap.isOpened():
             ret, frame = cap.read()
-
+            fps_start_time = time.time()
+            frame_count = 0
             frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             hand_results = hands.process(frame_rgb)
             face_results = face_detection.process(frame_rgb)
-
+            frame_count += 1
+            fps = 1.0 / (time.time() - fps_start_time)
+            cv2.putText(frame, f'FPS: {int(fps)}', (10, 30), 
+            cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
             if hand_results.multi_hand_landmarks :
                 for landmarks in hand_results.multi_hand_landmarks:
                     mp_draw.draw_landmarks(frame, landmarks, mp_hands.HAND_CONNECTIONS)
