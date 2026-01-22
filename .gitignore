@@ -1,1 +1,6 @@
 /venv
+data/
+lsf_model.pkl
+gesture_recognizer.task
+debug_data/
+hand_landmarker.task
