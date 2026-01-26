@@ -43,8 +43,6 @@ with HandLandmarker.create_from_options(options) as landmarker:
                 features.extend([lm.x, lm.y, lm.z])
 
             features = np.array(features)
-            print(features.shape)
-
             cv2.putText(frame, "MAIN DETECTEE", (10, 40),
                         cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
