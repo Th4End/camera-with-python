@@ -49,3 +49,4 @@ try:
     cv2.destroyAllWindows()
 except Exception as e:
     print(f'Erreur: {e}')
+    print(f'Erreur: {e}')

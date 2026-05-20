@@ -17,7 +17,7 @@ try:
             ret, frame = cam.read()
             
             frame = cv2.resize(frame, (width, height))
-            rgb_frame = cv2.cvtColor(frame, (cv2.COLOR_RGB2BGR))
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             results = hands.process(rgb_frame)
 
             if results.multi_hand_landmarks: 
